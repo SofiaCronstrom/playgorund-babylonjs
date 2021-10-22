@@ -1,6 +1,7 @@
 const canvas = document.querySelector('#renderCanvas');
 const engine = new BABYLON.Engine(canvas, true);
 
+
 const createScene = () => {
 
     
@@ -25,7 +26,7 @@ const createScene = () => {
 
      //wheel material
     const wheelMat = new BABYLON.StandardMaterial("wheelMat");
-    wheelMat.diffuseTexture = new BABYLON.Texture("fur.jpeg");
+    wheelMat.diffuseTexture = new BABYLON.Texture("/textures/fur.jpeg");
     
 
     //Wheel animation
@@ -101,6 +102,7 @@ window.addEventListener('resize', () => {
    
    engine.resize(); 
 });
+
 
 
     //I NEED TO DOWNLOAD NPM EARCUT ALGORITHM

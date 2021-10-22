@@ -86,7 +86,7 @@
        
        //texture
         const boxFur = new BABYLON.StandardMaterial('boxFur');
-        boxFur.diffuseTexture = new BABYLON.Texture('waterbump.png');
+        boxFur.diffuseTexture = new BABYLON.Texture('/textures/waterbump.png');
 
         //world materials
         const box = BABYLON.MeshBuilder.CreateBox('box', {width: 1, height: 1.5, depth: 1.5});
@@ -100,7 +100,7 @@
 
        //texture
        const roofFur = new BABYLON.StandardMaterial("roofFur")
-       roofFur.diffuseTexture = new BABYLON.Texture('fur.jpeg');
+       roofFur.diffuseTexture = new BABYLON.Texture('/textures/fur.jpeg');
        
        //roof
        const roof = BABYLON.MeshBuilder.CreateCylinder('roof', {diameter: 1.3, height: 1, tessellation: 3})
