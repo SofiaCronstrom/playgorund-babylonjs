@@ -24,7 +24,21 @@ const createScene = () => {
    box.position.x = 0.5;
    box.position.y = 1;
    box.material = boxMat;
+   
+    //box action, move box on click and change random color
+    box.actionManager = new BABYLON.ActionManager(scene);
+    box.actionManager.registerAction(new BABYLON.ExecuteCodeAction(
+       BABYLON.ActionManager.OnPickTrigger, (evt) => {
 
+        const sourceBox = evt.meshUnderPointer;
+      console.log(evt.meshUnderPointer);
+        //move box under click
+        sourceBox.position.x += 0.1;
+        sourceBox.position.y += 0.1;
+
+        //update the color
+        boxMat.diffuseColor = BABYLON.Color3.Random();
+       }));
 
 
    return scene;
@@ -34,4 +48,10 @@ const scene = createScene();
 
 engine.runRenderLoop(() => {
 scene.render();
+});
+
+// Watch for browser/canvas resize events
+window.addEventListener('resize', () => {
+      
+   engine.resize(); 
 });
